@@ -1,0 +1,15 @@
+private JValue _{{CamelPropertyName}};
+
+[JsonProperty("{{CamelPropertyName}}")]
+public JValue {{PropertyName}}Field
+{
+    get { return _{{CamelPropertyName}}; }
+    set
+    {
+        _{{CamelPropertyName}} = value;
+        {{PropertyName}} = ({{Type}})value;
+    }
+}
+
+[JsonIgnore]
+public bool Is{{PropertyName}}Set => {{PropertyName}}Field != null;
